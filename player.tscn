@@ -1,0 +1,501 @@
+[gd_scene load_steps=24 format=3 uid="uid://fp8w2y4rex2d"]
+
+[ext_resource type="Script" uid="uid://cseak1570u63r" path="res://Scripts/Player.gd" id="1_dw050"]
+[ext_resource type="ArrayMesh" uid="uid://dajqm5nn42rlk" path="res://Models/Arming Sword.res" id="2_b26j0"]
+[ext_resource type="Shader" uid="uid://dm63wl2v48u4e" path="res://GPUTrail-main/shaders/trail.gdshader" id="3_n7ghd"]
+[ext_resource type="Shader" uid="uid://c6gwlonnvg8am" path="res://GPUTrail-main/shaders/trail_draw_pass.gdshader" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://GPUTrail-main/defaults/texture.tres" id="5_ivps1"]
+[ext_resource type="Texture2D" uid="uid://ct31fhxvcragr" path="res://GPUTrail-main/defaults/curve.tres" id="6_urp6f"]
+[ext_resource type="Script" uid="uid://5tp8dmhnw5ej" path="res://GPUTrail-main/GPUTrail3D.gd" id="7_bwjto"]
+[ext_resource type="ArrayMesh" uid="uid://sohybpct5e7j" path="res://Models/Shield.res" id="8_606se"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bwvrq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nb5im"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oomci"]
+shader = ExtResource("3_n7ghd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_virf1"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_nvl01")
+shader_parameter/tex = ExtResource("5_ivps1")
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = ExtResource("5_ivps1")
+shader_parameter/curve = ExtResource("6_urp6f")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 42
+
+[sub_resource type="QuadMesh" id="QuadMesh_rh6cj"]
+material = SubResource("ShaderMaterial_virf1")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ccvuy"]
+points = PackedVector3Array(0.00123843, -0.00033114, 0.000164777, -0.00133576, -0.000616934, -4.96743e-05, -0.00133576, -0.000616934, 9.32719e-05, 2.2951e-05, 0.00853576, -4.96743e-05, 9.44346e-05, -0.00361899, -0.000335756, -0.000120016, -0.00361899, 0.000307849, 0.00131017, -0.000688383, -0.000121179, -0.000120016, 0.00574563, 9.32719e-05, -0.000835111, -0.000616934, -0.000192684, 0.000308627, -0.00369165, 9.32719e-05, -0.000334208, -0.00369165, -4.96743e-05, -0.00126401, -0.000759832, 0.000164777, 0.000165659, 0.00853576, -4.96743e-05, 0.000165659, 0.00581708, 9.32719e-05, -0.00126401, -0.000759832, -0.000121179, 9.44346e-05, -0.00369165, 0.000307849, -4.85326e-05, -0.00369165, -0.000335756, 0.00123843, -0.000759832, 0.000164777, 0.00131017, -0.000402588, -0.000121179, 0.00080953, -0.000616934, -0.000192684, 0.000308627, -0.00369165, -4.96743e-05, -0.000120016, 0.00782006, -4.96743e-05, -0.000334208, -0.00361899, 9.32719e-05, -4.85326e-05, -0.00383576, 9.32719e-05, -4.85326e-05, -0.0034773, -0.000335756, 9.44346e-05, -0.0034773, 0.000307849, -0.00133576, -0.000402588, 9.32719e-05, -0.00133576, -0.000402588, -4.96743e-05, -0.000120016, -0.000688383, -0.000264188, 2.2951e-05, -0.00383576, -0.000121179, -4.85326e-05, -0.00340585, 0.000307849, 9.44346e-05, -0.00383576, 9.32719e-05)
+
+[sub_resource type="Animation" id="Animation_qvies"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/ArmingSwordPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4, -0.2, -0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword/GPUTrail3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/ShieldPivot:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.134205, -0.262207, -0.39768)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.850801, 1.67708, -1.42783)]
+}
+
+[sub_resource type="Animation" id="Animation_lybmp"]
+resource_name = "attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.47412, -0.107484, -1.66615)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.428504, -0.2, -0.704276)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/ArmingSwordPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, -0.622541, 0), Vector3(0, 1.7787, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword/GPUTrail3D:visible")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(-0.168876, -0.217664, -0.39768), Vector3(-0.168876, -0.217664, -0.39768)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(-0.850801, 2.14797, -1.42783), Vector3(-0.850801, 2.14797, -1.42783)]
+}
+
+[sub_resource type="Animation" id="Animation_wna4r"]
+resource_name = "attack_vert"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0.176028, 0.24484, -0.5), Vector3(0.176028, 0.954675, -0.0148028)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.51324, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/ArmingSwordPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0.872665, 0, 0), Vector3(-2.17039, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword/GPUTrail3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.15),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_0sl4u"]
+resource_name = "great-attack"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_sm880"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/ArmingSwordPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0.0513127, -1.5708, -2.24492e-09)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0.4, -0.2, -0.5), Vector3(0.4, -0.240292, -0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword/GPUTrail3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/ShieldPivot:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.168876, -0.217664, -0.39768), Vector3(-0.168876, -0.158692, -0.39768)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.850801, 2.14797, -1.42783), Vector3(-0.850801, 2.06109, -1.42783)]
+}
+
+[sub_resource type="Animation" id="Animation_sd7wk"]
+resource_name = "lr-great-attack"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_4w6mm"]
+resource_name = "parry"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/ArmingSwordPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector3(0.605626, -0.2, -0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/ArmingSwordPivot/ArmingSword:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector3(0, -1.99937, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head/Camera3D/ShieldPivot:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector3(-0.134205, -0.262207, -0.39768), Vector3(0.292125, 0.0979576, -1.16614), Vector3(-0.134205, -0.539055, -0.965699)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head/Camera3D/ShieldPivot/ShieldMesh:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector3(-0.850801, 1.67708, -1.42783), Vector3(-0.850801, 1.5193, -1.42783), Vector3(-0.866809, 1.79147, -2.09376)]
+}
+
+[sub_resource type="Animation" id="Animation_e1ps2"]
+resource_name = "rl-great-attack"
+length = 0.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yow2o"]
+_data = {
+&"RESET": SubResource("Animation_qvies"),
+&"arm-attack": SubResource("Animation_lybmp"),
+&"arm-attack_vert": SubResource("Animation_wna4r"),
+&"great-attack": SubResource("Animation_0sl4u"),
+&"idle": SubResource("Animation_sm880"),
+&"lr-great-attack": SubResource("Animation_sd7wk"),
+&"parry": SubResource("Animation_4w6mm"),
+&"rl-great-attack": SubResource("Animation_e1ps2")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_dw050")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+gi_mode = 2
+mesh = SubResource("CapsuleMesh_bwvrq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nb5im")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="ArmingSwordPivot" type="Node3D" parent="Head/Camera3D"]
+
+[node name="ArmingSword" type="MeshInstance3D" parent="Head/Camera3D/ArmingSwordPivot"]
+transform = Transform3D(-0.000361999, 0, -100, 0, 100, 0, 100, 0, -0.000361999, 0.4, -0.2, -0.5)
+mesh = ExtResource("2_b26j0")
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="Head/Camera3D/ArmingSwordPivot/ArmingSword"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.00417252, 0)
+amount = 6
+lifetime = 6.0
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ShaderMaterial_oomci")
+draw_pass_1 = SubResource("QuadMesh_rh6cj")
+script = ExtResource("7_bwjto")
+length = 6
+length_seconds = 0.1
+texture = ExtResource("5_ivps1")
+color_ramp = ExtResource("5_ivps1")
+curve = ExtResource("6_urp6f")
+use_red_as_alpha = true
+_defaults_have_been_set = true
+
+[node name="Hitbox" type="Area3D" parent="Head/Camera3D/ArmingSwordPivot/ArmingSword"]
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/ArmingSwordPivot/ArmingSword/Hitbox"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ccvuy")
+
+[node name="ShieldPivot" type="Node3D" parent="Head/Camera3D"]
+
+[node name="ShieldMesh" type="MeshInstance3D" parent="Head/Camera3D/ShieldPivot"]
+transform = Transform3D(0.00797308, -0.00232665, 0.00721226, -0.0071792, 0.00103343, 0.00826989, -0.00242679, -0.0107013, -0.000769445, -0.134205, -0.262207, -0.39768)
+mesh = ExtResource("8_606se")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yow2o")
+}
+autoplay = "idle"
+playback_default_blend_time = 0.1
+
+[connection signal="area_entered" from="Head/Camera3D/ArmingSwordPivot/ArmingSword/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

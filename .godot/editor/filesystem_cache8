@@ -1,0 +1,46 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1741022027
+icon.svg::CompressedTexture2D::3893473430929097462::1734819378::1734819383::1::::<><>::
+stephen-archie-img6.jpg::CompressedTexture2D::3190032234629285249::1734993396::1734993403::1::::<><>::
+test_enemy.gd::GDScript::-1::1736028338::0::1::::<>Area3D<>::
+test_enemy.tscn::PackedScene::308691203254174317::1737044680::0::1::::<><>::res://test_enemy.gd<>uid://becvdcrgf41b2::::res://healthbar/healthbar.tscn<>res://visible_on_screen_notifier_3d.gd
+test_world.occ::ArrayOccluder3D::7587048458939315975::1735847613::0::1::::<><>::
+test_world.tscn::PackedScene::8092984595378925744::1737581159::0::1::::<><>::res://Scripts/Player.gd<>uid://dajqm5nn42rlk::::res://Models/Arming Sword.res<>res://GPUTrail-main/shaders/trail.gdshader<>res://GPUTrail-main/shaders/trail_draw_pass.gdshader<>uid://crk6pkb7e5rwc::::res://GPUTrail-main/defaults/texture.tres<>uid://ct31fhxvcragr::::res://GPUTrail-main/defaults/curve.tres<>res://GPUTrail-main/GPUTrail3D.gd<>uid://sohybpct5e7j::::res://Models/Shield.res<>uid://dl1s1v8pamnoc::::res://Models/Great Sword.res<>uid://ensdmp1kup06::::res://test_enemy.tscn
+visible_on_screen_notifier_3d.gd::GDScript::-1::1736027761::0::1::::<>VisibleOnScreenNotifier3D<>::
+::res://GPUTrail-main/::1737436151
+_shield_1.fbx::PackedScene::5046184756639041430::1735418970::1735419055::1::::<><>::uid://sohybpct5e7j::::res://Models/Shield.res
+bounce.svg::CompressedTexture2D::8916969683547304482::1734992191::1734992191::1::::<><>::
+GPUTrail3D.gd::GDScript::-1::1734992191::0::1::::GPUTrail3D<>GPUParticles3D<>res://GPUTrail-main/bounce.svg::
+plugin.cfg::TextFile::-1::1734992191::0::1::::<><>::
+plugin.gd::GDScript::-1::1734992191::0::1::::<>EditorPlugin<>::
+README.md::TextFile::-1::1734992191::0::1::::<><>::
+Texture_MAp_shields.png::CompressedTexture2D::1467849938797709787::1735419006::1735419222::1::::<><>::
+T_VFX_Trail223.png::CompressedTexture2D::5299136527812600926::1734992876::1734992894::1::::<><>::
+::res://GPUTrail-main/defaults/::1737581159
+curve.tres::CurveTexture::6165819948555381221::1737581159::0::1::::<><>::
+texture.tres::GradientTexture1D::5988605028696468514::1737581159::0::1::::<><>::
+::res://GPUTrail-main/gizmos/::1734992191
+gizmo.gd::GDScript::-1::1734992191::0::1::::<>EditorNode3DGizmoPlugin<>::
+::res://GPUTrail-main/shaders/::1734992191
+custom_example_alpha_erosion.gdshader::Shader::-1::1734992191::0::1::::<><>::
+custom_example_blank.gdshader::Shader::-1::1734992191::0::1::::<><>::
+gputrail_lib.gdshaderinc::ShaderInclude::-1::1734992191::0::1::::<><>::
+trail.gdshader::Shader::-1::1734992191::0::1::::<><>::
+trail_draw_pass.gdshader::Shader::-1::1734992191::0::1::::<><>::
+::res://healthbar/::1737044680
+healthbar.gd::GDScript::-1::1736027683::0::1::::<>TextureProgressBar<>::
+healthbar.tscn::PackedScene::2672585359572000093::1737044680::0::1::::<><>::uid://b0m4jsx4ciine::::res://healthbar/progressbar.png<>uid://7k6n062kd4ve::::res://healthbar/progress.png<>res://healthbar/healthbar.gd
+progress.png::CompressedTexture2D::2268593578267120538::1736024841::1736024841::1::::<><>::
+progressbar.png::CompressedTexture2D::4167692154899427742::1736024833::1736024833::1::::<><>::
+::res://Models/::1737581159
+Arming Sword.res::ArrayMesh::7178835948690420556::1737581159::0::1::::<><>::
+Great Sword.res::ArrayMesh::7986153643865454482::1737581159::0::1::::<><>::
+Low Poly Weapon Pack - by Kickin It Studios.fbx_Arming_Sword.fbx::PackedScene::3868464859858282383::1734988932::1734991684::1::::<><>::uid://dajqm5nn42rlk::::res://Models/Arming Sword.res
+Low Poly Weapon Pack - by Kickin It Studios.fbx_Great_Sword.fbx::PackedScene::7869625075940928480::1736781032::1736878847::1::::<><>::uid://dl1s1v8pamnoc::::res://Models/Great Sword.res
+Low Poly Weapon Pack - by Kickin It Studios.fbx_Scimitar.fbx::PackedScene::4346574897551265270::1734988799::1734988800::1::::<><>::
+Shield.res::ArrayMesh::1292768427857364985::1737581159::0::1::::<><>::uid://u6bjk1y01bst::::res://GPUTrail-main/Texture_MAp_shields.png
+Short Sword.glb::PackedScene::1934038219621572695::1734911364::1734988482::1::::<><>::uid://df71yjjosjcwr::::res://Models/Short Sword.res
+Short Sword.res::ArrayMesh::7577888345538921325::1734988482::0::1::::<><>::uid://p0admjls3v8d::::res://Models/Short Sword_Short Sword.png
+Short Sword_Short Sword.png::CompressedTexture2D::1104448100512105945::1734911369::1734911369::1::::<><>::
+::res://Scripts/::1737043900
+Player.gd::GDScript::-1::1737043900::0::1::::<>CharacterBody3D<>::
