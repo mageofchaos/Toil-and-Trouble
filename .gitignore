@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores 
-.godot/
+/.godot/
 /android/
+/Users/drbad/toil-and-trouble-base/YouCanDoIt-09531b2d0264951f6088e22c1c20134592a60f63/

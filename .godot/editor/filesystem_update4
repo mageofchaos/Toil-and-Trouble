@@ -1,9 +1,0 @@
-res://test_world.tscn
-res://Models/Arming Sword.res
-res://GPUTrail-main/defaults/texture.tres
-res://GPUTrail-main/defaults/curve.tres
-res://Models/Shield.res
-res://healthbar/healthbar.gd
-res://test_enemy.tscn
-res://healthbar/healthbar.tscn
-res://player.tscn
